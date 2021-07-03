@@ -1,0 +1,20 @@
+﻿
+@{ ViewBag.Title = "Confirm Delete"; }
+@{
+    Layout = "_DashBoardLayout";
+}
+<div class="row justify-content-center">
+    <div>
+        <div>
+            <br />
+            <div class="card-header font-weight-bold" style="color:blue">
+                Are you sure you want to <em class="font-weight-bolder">Delete</em> this Review??
+
+                <div class="card-body">
+                    <a class="btn font-weight-bold ml-5" asp-controller="Review" asp-action="Delete" style="border-color:blue">Yes</a>
+                    <a class="btn font-weight-bold ml-5" asp-controller="Review" asp-action="Index" style="border-color:blue">No</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

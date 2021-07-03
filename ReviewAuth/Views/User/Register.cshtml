@@ -1,0 +1,46 @@
+﻿@model ProductReviewAuthentication.Models.CreateUserViewModel
+
+@{ ViewBag.Title = "Register"; }
+
+<div class="row justify-content-center">
+    <div class="card">
+
+        <div class="card-header">
+            <h1 class="text-center">FZ User Registration</h1>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+
+                <div class="form-group mb-3">
+                    <input asp-for="Name" class="form-control" placeholder="Enter Full Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span><br>
+                    <input asp-for="Email" class="form-control" placeholder="Email Address" />
+                    <span asp-validation-for="Email" class="text-danger"></span><br>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Create Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span><br />
+                    <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span><br />
+                    <input asp-for="Gender" type="radio" id="Male" name="gender" value="Male" />
+                    <label for="Male">Male</label>
+                    <input asp-for="Gender" type="radio" id="Female" name="gender" value="Female" />
+                    <label for="Female">Female</label>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Register" class="btn" style="background:blue" />
+                    <span class="mr-3">Do you have an account already?<a asp-area="" asp-controller="User" asp-action="Login">Login Here</a></span>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

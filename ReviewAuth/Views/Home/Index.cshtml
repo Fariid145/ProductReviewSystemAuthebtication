@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ProductReviewAuthentication.Models.ViewModels.ProductViewModel>
+@{ ViewBag.Title = "Home Page"; }
+
+<h1 class="text-center" style="color: blue;">Welcome to FZ Products!!</h1>
+<br />
+<h3>Check out for Our Products below:</h3>
+<br />
+
+<div class="row">
+
+
+    @foreach (var product in Model)
+    {
+        <div class="col-lg-4 mb-5 col-sm-6">
+            <div class="card ">
+                <h4 class="card-header font-weight-bold text-center">
+                    @product.Name
+                </h4>
+                <div class="card-body">
+                    <a class="font-weight-bold">Description: </a>@product.Description<br />
+                    <a class="font-weight-bold">Manufacturer: </a>@product.UserName<br />
+                    <a class="font-weight-bold">No. of Reviews: </a>@product.TotalReview<br />
+                    <a class="font-weight-bold"> Ratings: </a>@product.AverageRating<br /><br />
+                    <a class="card-footer text-center font-weight-bold text-black-50" asp-action="Detail" asp-route-id="@product.Id" style="background-color:blue "style="color:white">Reviews</a>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>

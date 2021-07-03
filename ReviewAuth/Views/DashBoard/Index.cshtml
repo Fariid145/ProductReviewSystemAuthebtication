@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProductReviewAuthentication.Models.ViewModels.ProductViewModel>
+@{
+    Layout = "_DashBoardLayout";
+}
+@{ ViewBag.Title = "DashBoard"; }
+
+<h1 class="text-center" style="color: blue">Welcome @ViewBag.UserName</h1>
+<br />
+@* <div class="row mb-5">
+    <div class="col-lg-4 col-sm-6">
+        <h5 class="font-weight-bolder "><em> Number of Products: </em><great style="color:blue">@ViewBag.TotalProduct </great></h5>
+
+    </div>
+    <div class="col-lg-4  col-sm-6">
+    </div>   
+    @* <div class="col-lg-4 col-sm-6">
+       <h5 class="font-weight-bolder "><em>Number of Reviews : </em><great style="color:blue">@ViewBag.TotalReviews</great></h5>
+    </div> *@
+    @* </div>  *@
+
+    <h3>Other Products:</h3>
+    <br />
+
+    <div class="row">
+
+
+        @foreach (var product in Model)
+        {
+            <div class="col-lg-4 mb-5 col-sm-6">
+                <div class="card ">
+                    <h4 class="card-header font-weight-bold text-center">
+                        @product.Name
+                    </h4>
+                    <div class="card-body">
+                        <a class="font-weight-bold">Description: </a>@product.Description<br />
+                        <a class="font-weight-bold">Manufacturer: </a>@product.UserName<br />
+                        <a class="font-weight-bold">No. of Reviews: </a>@product.TotalReview<br />
+                        <a class="font-weight-bold"> Ratings: </a>@product.AverageRating<br /><br />
+                        <a class="card-footer text-center font-weight-bold text-black-50" asp-action="Detail" asp-route-id="@product.Id" style="background-color:blue">Reviews</a>
+                        <a class="btn ml-5" style="border-color:blue" asp-controller="Review" asp-action="Create">Add Review</a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>

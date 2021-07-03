@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ProductReviewAuthentication.Models.ViewModels.ProductIndexViewModel>
+@{
+    Layout = "_DashBoardLayout";
+}
+@{ ViewBag.Title = "ReviewsPerProduct"; }
+
+<h1 class="text-center">Reviews  @ViewBag.Id</h1>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>UserName</th>
+                    <th>Comment</th>
+                    <th>Ratings</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var review in Model)
+                {
+                    <tr>
+                        <td> @review.UserName</td>
+                        <td>@review.Comment</td>
+                        <td>@review.Ratings </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
+<div class="mb-3 border-right">
+    <a class="btn font-weight-bolder" style="color:orchid" asp-controller="Product" asp-action="Index">Go Back</a>
+</div>
+

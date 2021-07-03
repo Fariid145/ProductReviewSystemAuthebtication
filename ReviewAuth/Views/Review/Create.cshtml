@@ -1,0 +1,43 @@
+﻿@model ProductReviewAuthentication.Models.ViewModels.CreateReviewViewModel
+@{
+    Layout = "_DashBoardLayout";
+}
+
+@{ ViewBag.Title = "Create Review"; }
+
+<h1 class="text-center">Welcome @ViewBag.UserName </h1>
+<div class="row ">
+
+    <div class="card-header">
+        <h2>Make A Review</h2>
+    </div>
+
+    <div class="card-body">
+
+        <form method="post" >
+
+            <div class="form-group">
+                <select asp-for="ProductId" asp-items="ViewBag.products" class="form-control">
+                    <option selected>--Select Product Name--</option>
+                </select>
+                <span asp-validation-for="ProductId" class="text-danger"></span><br>
+
+                <textarea asp-for="Comment" class="form-control" placeholder="Leave a Comment here"></textarea>
+                <span asp-validation-for="Comment" class="text-danger"></span><br>
+
+                <input asp-for="Ratings" class="form-control" placeholder="Rate Us" />
+                <span asp-validation-for="Ratings" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Review" class="btn font-weight-bold" style="background-color:blue" />
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

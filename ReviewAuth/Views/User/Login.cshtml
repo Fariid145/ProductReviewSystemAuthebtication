@@ -1,0 +1,37 @@
+﻿@model ProductReviewAuthentication.Models.LoginViewModel
+
+@{ ViewBag.Title = "Login"; }
+
+<div class="row justify-content-center">
+    <div class="card">
+
+        <div class="card-header">
+            <h1 class="text-center">Sign in</h1>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+
+                <div class="form-group mb-3">
+                    <input asp-for="Email" class="form-control" placeholder="Email Address" />
+                    <span asp-validation-for="Email" class="text-danger"></span><br>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn" style="background:blue"/>
+                    <span class="mr-3"> You Don't have an account?<a asp-area="" asp-controller="User" asp-action="Register">  Register Here</a></span>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

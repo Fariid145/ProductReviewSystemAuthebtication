@@ -1,0 +1,40 @@
+﻿@model ProductReviewAuthentication.Models.ViewModels.CreateProductViewModel
+
+@{ ViewBag.Title = "Create Product"; }
+@{
+    Layout = "_DashBoardLayout";
+}
+
+<div class="row justify-content-center">
+    <div class="card">
+
+        <div class="card-header">
+            <h1 class="text-center">Our Products</h1>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+
+                <div class="form-group">
+                    <input asp-for="Name" class="form-control" placeholder="Enter product name" />
+                    <span asp-validation-for="Name" class="text-danger"></span><br>
+
+                    <input asp-for="Description" class="form-control" placeholder="Product Description" />
+                    <span asp-validation-for="Description" class="text-danger"></span><br>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create Product" class="btn" style="background-color:blue" />
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

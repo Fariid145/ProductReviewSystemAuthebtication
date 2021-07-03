@@ -1,0 +1,41 @@
+﻿@model ProductReviewAuthentication.Models.Review
+
+@{
+    Layout = "_DashBoardLayout";
+}
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1 class="text-center">Update Review</h1>
+
+<h4>Review</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <textarea asp-for="Comment" class="form-control" placeholder="Update Comment Here"></textarea>
+                <span asp-validation-for="Comment" class="text-danger"></span><br>
+                <input asp-for="Ratings" class="form-control" placeholder="Update Ratings" />
+                <span asp-validation-for="Ratings" class="text-danger"></span><br>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn font-weight-bold" style="background-color:blue" />
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" style="color:orchid">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
