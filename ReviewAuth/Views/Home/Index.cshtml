@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProductReviewAuthentication.Models.ViewModels.ProductViewModel>
 @{ ViewBag.Title = "Home Page"; }
 
-<h1 class="text-center" style="color: blue;">Welcome to FZ Products!!</h1>
+<h1 class="text-center" style="color:lightblue;">Welcome to FZ Products!!</h1>
 <br />
 <h3>Check out for Our Products below:</h3>
 <br />
@@ -21,7 +21,7 @@
                     <a class="font-weight-bold">Manufacturer: </a>@product.UserName<br />
                     <a class="font-weight-bold">No. of Reviews: </a>@product.TotalReview<br />
                     <a class="font-weight-bold"> Ratings: </a>@product.AverageRating<br /><br />
-                    <a class="card-footer text-center font-weight-bold text-black-50" asp-action="Detail" asp-route-id="@product.Id" style="background-color:blue "style="color:white">Reviews</a>
+                    <a class="card-footer text-center font-weight-bold text-black-50" asp-action="Detail" asp-route-id="@product.Id"class="btn btn-outline-success">Reviews</a>
                 </div>
 
             </div>

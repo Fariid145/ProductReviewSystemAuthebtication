@@ -3,7 +3,7 @@
     Layout = "_DashBoardLayout";
 }
 
-<h1 class="text-center" style="color:blue">Your Reviews</h1>
+<h1 class="text-center" style="color:lightblue">Your Reviews</h1>
 
 <div class="card">
     <br />
@@ -28,8 +28,8 @@
                                 <td>@review.Comment</td>
                                 <td>@review.Ratings </td>
                                 <td>
-                                    <a class="btn font-weight-bold" asp-action="Update" asp-route-id="@review.Id" style="background-color:blue">Update</a>
-                                    <a class="btn font-weight-bold" asp-action="Delete" asp-route-id="@review.Id" style="border-color:blue">Delete</a>
+                                    <a class="btn font-weight-bold" asp-action="Update" asp-route-id="@review.Id" style="background-color:lightblue">Update</a>
+                                    <a class="btn font-weight-bold" asp-action="Delete" asp-route-id="@review.Id" style="border-color:red">Delete</a>
                                 </td>
                             </tr>
                         }

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProductReviewAuthentication.Models.ViewModels.ProductIndexViewModel>
 @{ ViewBag.Title = "Details"; }
 
-<h1 class="text-center">Reviews On <em style="color:orchid">@ViewBag.Id</em></h1>
+<h1 class="text-center">Reviews On @ViewBag.Id</h1>
 <div class="card">
     <div class="card-body">
         <table class="table table-bordered">
@@ -27,7 +27,7 @@
 </div>
 <br />
 <div class="mb-3 border-right">
-    <a class="btn font-weight-bolder" style="color:blue" asp-controller="Home" asp-action="Index">Back To Home</a>
+    <a class="btn font-weight-bolder" style="border-color:blue" asp-controller="Home" asp-action="Index">Back To Home</a>
     <a class="btn ml-5" style="border-color:blue" asp-controller="User" asp-action="Login">Add Review</a>
 </div>
 

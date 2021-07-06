@@ -4,12 +4,12 @@
     Layout = "_DashBoardLayout";
 }
 
-<h1 class="text-center" style="color:orchid">Your Products</h1>
+<h1 class="text-center" style="color:lightblue">Your Products</h1>
 
 <div class="card">
     <div>
         <br />
-        <a class="btn font-weight-bold ml-4" asp-controller="Product" asp-action="Create" style="background-color:blue">Add Product</a>
+        <a class="btn font-weight-bold ml-4" asp-controller="Product" asp-action="Create" style="background-color:lightblue">Add Product</a>
         <div class="card-body">
             <table class="table table-bordered">
                 <thead>
@@ -30,8 +30,8 @@
                             <td>@product.AverageRating</td>
                             <td>
                                 <a class="btn font-weight-bold" asp-action="ReviewsPerProduct" asp-route-id="@product.Id" style="border-color:orbluechid">Reviews</a>
-                                <a class="btn font-weight-bold" asp-action="Update" asp-route-id="@product.Id" style="background-color:blue">Update </a>
-                                <a class="btn font-weight-bold" asp-action="Delete" asp-route-id="@product.Id" style="border-color:blue">Delete</a>
+                                <a class="btn font-weight-bold" asp-action="Update" asp-route-id="@product.Id" style="border-color:blue">Update </a>
+                                <a class="btn font-weight-bold" asp-action="Delete" asp-route-id="@product.Id" style="border-color:red">Delete</a>
                             </td>
                         </tr>
                     }

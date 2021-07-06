@@ -4,9 +4,9 @@
 }
 @{ ViewBag.Title = "ReviewsPerProduct"; }
 
-<h1 class="text-center">Reviews  @ViewBag.Id</h1>
+<h1 class="text-center">Reviews on @ViewBag.Id</h1>
 <div class="card">
-    <div class="card-body">
+    <div class="card-body"> 
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -30,6 +30,6 @@
 </div>
 <br />
 <div class="mb-3 border-right">
-    <a class="btn font-weight-bolder" style="color:orchid" asp-controller="Product" asp-action="Index">Go Back</a>
+    <a class="btn font-weight-bolder" style="border-color:blue" asp-controller="Product" asp-action="Index">Go Back</a>
 </div>
 
